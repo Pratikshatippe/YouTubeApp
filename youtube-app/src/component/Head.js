@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch } from 'react-redux';
+import { toggleMenu } from '../utils/appSlice';
 
 const Head = (props) => {
-    const [isSidePanelVisible, setIsSidePanelVisible] = useState('false');
-    props.setSideStatus(isSidePanelVisible);
+    const dispatch = useDispatch();
+    const toggleMenuHandler =()=>{
+        dispatch(toggleMenu());
+    }
   return (
     <div className='grid grid-flow-col shadow-lg'>
         <div className='flex col-span-1 p-2'>
-            <img className="h-8" alt="dashboard" src="https://icon-library.com/images/menu-bars-icon/menu-bars-icon-7.jpg" onClick={()=>{setIsSidePanelVisible("true");}}/>
+            <img className="h-8" alt="dashboard" src="https://icon-library.com/images/menu-bars-icon/menu-bars-icon-7.jpg" onClick={()=>{toggleMenuHandler()}}/>
             <img className="h-10" alt="logo" src="https://www.freeiconspng.com/thumbs/youtube-logo-png/youtube-logo-png-transparent-image-5.png"/>
         </div>
         <div className='flex col-span-8 p-2'>

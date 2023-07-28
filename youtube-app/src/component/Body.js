@@ -1,11 +1,15 @@
 import React from 'react'
 import Sidepanel from './Sidepanel'
 import MainContainer from './MainContainer'
+import { useSelector } from 'react-redux'
+import store from '../utils/store'
 
-const Body = (props) => {
+const Body = () => {
+    const menuStatus = useSelector(store=>store.app.isMenuOpen);
+    console.log(menuStatus)
   return (
     <div className='grid grid-flow-col'>
-        {!props.isStatus && <Sidepanel className="col-span-1"/>}
+        {menuStatus && <Sidepanel className="col-span-1"/>}
         <MainContainer className="col-span-11" />
     </div>
   )

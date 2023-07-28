@@ -7,13 +7,11 @@ import { Provider } from 'react-redux';
 import store from './utils/store';
 
 function App() {
-  // const [status, setStatus] = useState("false");
-  // console.log(status)
   return (
     <Provider store={store}>
     <div>
-      <Head setSideStatus={setStatus}/>
-      <Body isStatus={status}/>
+      <Head/>
+      <Body/>
     </div>
     </Provider>
   );
