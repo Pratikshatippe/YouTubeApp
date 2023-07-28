@@ -2,7 +2,6 @@ import React from 'react'
 import Sidepanel from './Sidepanel'
 import MainContainer from './MainContainer'
 import { useSelector } from 'react-redux'
-import store from '../utils/store'
 
 const Body = () => {
     const menuStatus = useSelector(store=>store.app.isMenuOpen);
