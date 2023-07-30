@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { toggleMenu } from '../utils/appSlice';
 
-const Head = (props) => {
+const Head = () => {
     const dispatch = useDispatch();
     const toggleMenuHandler =()=>{
         dispatch(toggleMenu());
